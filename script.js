@@ -1,4 +1,4 @@
-const GITHUB_USERNAME = "Rafid-Nagara";
+const GITHUB_USERNAME = "Mckael123";
 const GITHUB_PROFILE_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
 const GITHUB_REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`;
 
