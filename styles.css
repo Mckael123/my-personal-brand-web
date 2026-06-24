@@ -355,6 +355,8 @@ h1 strong,
 .project-card,
 .repo-card,
 .github-profile,
+.contribution-snake,
+.snake-frame,
 .contact-card {
   border: 1px solid rgba(255, 255, 255, 0.11);
   background: var(--card);
@@ -563,6 +565,75 @@ h1 strong,
   color: var(--neon-blue);
 }
 
+.contribution-snake {
+  position: relative;
+  margin-top: 1.3rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  display: grid;
+  grid-template-columns: minmax(240px, 0.48fr) minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: center;
+  border-color: rgba(0, 212, 255, 0.34);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(0, 212, 255, 0.2), transparent 18rem),
+    linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(37, 99, 255, 0.08)),
+    var(--card);
+  box-shadow: 0 0 46px rgba(0, 212, 255, 0.16), inset 0 0 42px rgba(0, 212, 255, 0.08);
+  overflow: hidden;
+}
+
+.contribution-snake::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.contribution-copy,
+.snake-frame {
+  position: relative;
+  z-index: 1;
+}
+
+.contribution-copy h3 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  line-height: 1.05;
+}
+
+.contribution-copy p:not(.eyebrow) {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.snake-frame {
+  min-height: 190px;
+  padding: 0.9rem;
+  display: grid;
+  place-items: center;
+  border-color: rgba(0, 212, 255, 0.28);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(2, 10, 24, 0.7), rgba(0, 212, 255, 0.08)),
+    rgba(0, 212, 255, 0.05);
+  box-shadow: inset 0 0 34px rgba(0, 212, 255, 0.12);
+}
+
+.snake-frame img {
+  width: 100%;
+  min-height: 160px;
+  object-fit: contain;
+  filter: hue-rotate(178deg) saturate(1.65) brightness(1.18) drop-shadow(0 0 18px rgba(0, 212, 255, 0.4));
+}
+
 .repo-meta {
   display: flex;
   flex-wrap: wrap;
@@ -707,6 +778,10 @@ h1 strong,
 
   .github-profile {
     grid-template-columns: auto 1fr;
+  }
+
+  .contribution-snake {
+    grid-template-columns: 1fr;
   }
 
   .github-stats {
